@@ -42,20 +42,20 @@ def get_message(status_type: StatusType, activity_type: discord.ActivityType, co
 
     if status_type is StatusType.Start:
         return "みんな！！！\n<@{}>が{}を{}始めたよ！！！！".format(
-            os.getenv("TAKURO"),
+            context.id,
             title,
             suffix
         )
     else:
         return "みんな、、、\n<@{}>が{}を{}終わっちゃったみたい...悲しいね".format(
-            os.getenv("TAKURO"),
+            context.id,
             title,
             suffix
         )
 
 def get_activity_title(activity_type: discord.ActivityType, context: discord.Member) -> Optional[str]:
     if activity_type is discord.ActivityType.playing:
-        return "{}".format(context.activity.title)
+        return "{}".format(context.activity.name)
     else:
         return None
 
