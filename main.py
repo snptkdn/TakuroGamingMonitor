@@ -81,8 +81,8 @@ async def on_ready():
 
 @client.event
 async def on_presence_update(before: discord.Member, after: discord.Member):
-    if not is_from_takuro(before.id):
-        return
+#    if not is_from_takuro(before.id):
+#        return
 
     status_type = getStatusType(before, after)
     if status_type is StatusType.NotChange:
