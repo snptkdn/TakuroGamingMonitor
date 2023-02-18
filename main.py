@@ -56,16 +56,12 @@ def get_message(status_type: StatusType, activity_type: discord.ActivityType, co
 def get_activity_title(activity_type: discord.ActivityType, context: discord.Member) -> Optional[str]:
     if activity_type is discord.ActivityType.playing:
         return "{}".format(context.activity.title)
-    elif activity_type is discord.ActivityType.listening:
-        return "{}で{}".format(context.activity.name, context.activity.artist)
     else:
         return None
 
 def get_activity_suffix(activity_type: discord.ActivityType, context: discord.Member) -> Optional[str]:
     if activity_type is discord.ActivityType.playing:
         return "やり"
-    elif activity_type is discord.ActivityType.listening:
-        return "聴き"
     else:
         return None
 
